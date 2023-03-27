@@ -1,0 +1,9 @@
+#expenses_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: column nowrap;
+  gap: 10px;
+  overflow-y: auto;
+}

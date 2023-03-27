@@ -1,0 +1,17 @@
+#DropDown_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.DropDown_Title {
+}
+#DropDown,
+.DropDown_Option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  outline: none;
+}

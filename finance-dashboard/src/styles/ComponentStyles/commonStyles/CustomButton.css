@@ -1,0 +1,17 @@
+.custom_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.button {
+  color: #1fcb4f;
+  font-size: 15px;
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 0.1px solid #1fcb4f;
+  background-color: #282c35;
+}

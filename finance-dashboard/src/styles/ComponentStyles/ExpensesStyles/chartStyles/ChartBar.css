@@ -1,0 +1,26 @@
+.ChartBar {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+.outer_bar {
+  width: 1rem;
+  height: 20vh;
+  background-color: #282c35;
+  border: 1px solid #1a1c22;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-flow: column nowrap;
+}
+.inner_bar {
+  background-color: #1fcb4f;
+  width: 100%;
+}
+.outer_bar,
+.inner_bar {
+  border-radius: 20px;
+}
+.bar_label {
+  color: #1a1c22;
+}

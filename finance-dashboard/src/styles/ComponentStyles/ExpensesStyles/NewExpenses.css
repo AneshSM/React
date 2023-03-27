@@ -1,0 +1,11 @@
+.new_expenses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  padding: 10px;
+  background-color: #282c35;
+  flex-flow: column nowrap;
+  position: sticky;
+}

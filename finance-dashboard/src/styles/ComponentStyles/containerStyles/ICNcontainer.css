@@ -1,0 +1,19 @@
+.icnContainer {
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  padding: 10px;
+  padding-bottom: 6px;
+  background-color: #282c35;
+}
+.icon > span {
+  font-size: 20px;
+}
+.KPIicn {
+  color: #1fcb4f;
+}

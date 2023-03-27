@@ -1,0 +1,28 @@
+.new_expense_actions,
+.new_expense_controls,
+.new_expense_control,
+.new_expense_form {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.new_expense_form {
+  width: 100%;
+  flex-flow: column nowrap;
+}
+.new_expense_controls {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex: 1 1 auto;
+}
+.new_expense_control {
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  padding: 5px;
+}
+.new_expense_actions {
+  width: 100%;
+  justify-content: end;
+  gap: 20px;
+}

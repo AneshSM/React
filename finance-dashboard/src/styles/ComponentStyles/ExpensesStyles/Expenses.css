@@ -1,0 +1,10 @@
+#expenses {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1 1 auto;
+  flex-flow: column nowrap;
+  gap: 10px;
+  overflow: hidden;
+}
