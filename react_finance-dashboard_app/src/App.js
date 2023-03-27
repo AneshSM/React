@@ -1,7 +1,13 @@
 import "./App.css";
 
+import { ExpensePage } from "./pages";
+
 function App() {
-  return <div></div>;
+  return (
+    <>
+      <ExpensePage />
+    </>
+  );
 }
 
 export default App;
