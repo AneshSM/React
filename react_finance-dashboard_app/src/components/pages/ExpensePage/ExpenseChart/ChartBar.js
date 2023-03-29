@@ -1,4 +1,3 @@
-import { expenseChartStyle, flexBox } from "../../../../styles";
 import { Card } from "../../../common";
 
 const ChartBar = (props) => {
@@ -7,17 +6,15 @@ const ChartBar = (props) => {
     barHeight = Math.round((props.value / props.maxValue) * 100) + "%";
   }
   return (
-    <Card style={{ ...flexBox, ...expenseChartStyle.ChartBar }}>
-      <div style={{ ...flexBox, ...expenseChartStyle.outer_bar }}>
+    <Card style={{}}>
+      <div style={{}}>
         <div
           style={{
-            ...flexBox,
-            ...expenseChartStyle.inner_bar,
             height: barHeight,
           }}
         ></div>
       </div>
-      <div style={expenseChartStyle.bar_label}>{props.label}</div>
+      <div style={{}}>{props.label}</div>
     </Card>
   );
 };

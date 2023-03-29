@@ -1,9 +1,8 @@
 import { Expenses } from "../components/pages";
-import { expensePageStyle, flexBox } from "../styles";
-
+import styles from "../styles/pages/ExpensePage.module.css";
 const ExpensePage = () => {
   return (
-    <div style={{ ...flexBox, ...expensePageStyle.expense }}>
+    <div id={styles.expensePage}>
       <Expenses />
     </div>
   );

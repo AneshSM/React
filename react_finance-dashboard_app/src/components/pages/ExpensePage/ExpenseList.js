@@ -1,15 +1,12 @@
-import { expenseListStyles } from "../../../styles";
 import { Card } from "../../common";
 import ExpenseItem from "./ExpenseItem";
 
 const ExpenseList = (props) => {
   if (props.items.length === 0) {
-    return (
-      <Card style={expenseListStyles.list_meassage}>No Expense found</Card>
-    );
+    return <Card style={{}}>No Expense found</Card>;
   }
   return (
-    <Card style={expenseListStyles.expenseList_container}>
+    <Card style={{}}>
       {props.items.map((expenseItems) => (
         <ExpenseItem
           key={expenseItems.id}

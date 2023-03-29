@@ -1,79 +1,91 @@
-import { expenseFormStyle, flexBox } from "../../../styles";
-import { CustomButton, CustomInput } from "../../../components/common";
+import styles from "../../../styles/pages/ExpensePage.module.css";
+import { CustomButton } from "../../../components/common";
+import { useState } from "react";
+import { expenseInput } from "../../../hooks";
+
 const ExpenseForm = (props) => {
-  // Styles
+  //set Data
+  const [title, bindTitle, resetTitle] = expenseInput("");
+  const [amount, bindAmount, resetAmount] = expenseInput(0);
+  const [date, bindDate, resetDate] = expenseInput("");
+  const [validateTitle, setTitle] = useState(false);
+  const [validateAmount, setAmount] = useState(false);
+  const [validateDate, setDate] = useState(false);
 
-  // Form Elements
-  let [title, titleInput] = CustomInput({
-    id: "title",
-    style: expenseFormStyle.inputStyle,
-    type: "text",
-  });
-  let [amount, amountInput] = CustomInput({
-    id: "amount",
-    style: expenseFormStyle.inputStyle,
-    type: "number",
-    min: "0",
-    step: "0.01",
-  });
-  let [date, dateInput] = CustomInput({
-    id: "date",
-    style: expenseFormStyle.inputStyle,
-    type: "date",
-    min: "2019-01-01",
-    max: "2024-12-31",
-  });
-
-  // getData
+  // get Data
   const submitHandler = (event) => {
     event.preventDefault();
-    const formValues = {
-      id: "",
-      title: title,
-      amount: +amount,
-      date: new Date(date),
-    };
-    document.getElementById("title").value = "";
-    document.getElementById("amount").value = "";
-    document.getElementById("date").value = "";
-    // return new data
-    formValues.title.trim().length > 0 &&
-      formValues.amount > 0 &&
-      formValues.date.toDateString() !== "Invalid date" &&
-      (props.onAddNewExpenseData(formValues) || props.onCancel("false"));
+    if (
+      (title !== "" && setTitle(true)) ||
+      (amount !== 0 && setAmount(true)) ||
+      (date.toString() !== "" && setDate(true))
+    ) {
+      validateTitle &&
+        validateAmount &&
+        validateDate &&
+        console.log({ title, amount, date });
+    }
+    // props.onAddNewExpenseData({ title, amount, date }) &&
+    // props.onCancel("false");
   };
 
   return (
-    <form
-      style={{ ...flexBox, ...expenseFormStyle.new_expense_form }}
-      onSubmit={submitHandler}
-    >
-      <div style={{ ...flexBox, ...expenseFormStyle.new_expense_controls }}>
-        <div style={{ ...flexBox, ...expenseFormStyle.new_expense_control }}>
-          <label>Title</label>
-          {titleInput}
+    <form className={styles.expense_form} onSubmit={submitHandler}>
+      <div className={styles.expense_form_Input_container}>
+        <div className="expense_input_container">
+          <label htmlFor="" className="input_label">
+            Title
+          </label>
+          <input
+            type="text"
+            className={`${styles.expense_input} ${
+              !validateTitle && styles.input_alert
+            }`}
+            value={title}
+            {...bindTitle}
+          />
         </div>
-        <div style={{ ...flexBox, ...expenseFormStyle.new_expense_control }}>
-          <label>Amount</label>
-          {amountInput}
+        <div className="expense_input_container">
+          <label htmlFor="" className="input_label">
+            Amount
+          </label>
+          <input
+            type="number"
+            value={amount}
+            className={`${styles.expense_input} ${
+              !validateAmount && styles.input_alert
+            }`}
+            {...bindAmount}
+          />
         </div>
-        <div style={{ ...flexBox, ...expenseFormStyle.new_expense_control }}>
-          <label>Date </label>
-          {dateInput}
+        <div className="expense_input_container">
+          <label htmlFor="" className="input_label">
+            Date
+          </label>
+          <input
+            type="date"
+            className={`${styles.expense_input} ${
+              !validateDate && styles.input_alert
+            }`}
+            value={date}
+            {...bindDate}
+          />
         </div>
       </div>
-      <div style={{ ...flexBox, ...expenseFormStyle.new_expense_actions }}>
+      <div className={styles.expense_form_Button_container}>
         <CustomButton
-          style={expenseFormStyle.buttonStyle}
+          style={{}}
           label="Cancel "
           type="button"
           value="false"
+          className={`${styles.expenseButton} ${styles.expenseCancelButton}`}
           onPressed={props.onCancel}
         />
         <CustomButton
-          style={expenseFormStyle.buttonStyle}
-          label="Add Expenses"
+          style={{}}
+          label="Submit"
           type="submit"
+          className={styles.expenseButton}
           onPressed={props.onCancel}
         />
       </div>

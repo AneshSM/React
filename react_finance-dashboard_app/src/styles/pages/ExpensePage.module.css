@@ -1,0 +1,93 @@
+@import "../RootValues.css";
+/* Expense Page */
+#expensePage {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color_60);
+  color: var(--font_color_30);
+}
+
+/* Expenses Container */
+
+#expense_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: column nowrap;
+  position: relative;
+}
+
+/* Expense Data Filter and Chart container */
+
+#expense_data_filter_chart_container {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: column nowrap;
+  position: relative;
+  padding: var(--padding_var);
+}
+
+/* New Expenses Data collection */
+#newExpense_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: column nowrap;
+  background-color: var(--color_30);
+  padding: var(--padding_var);
+}
+
+.expenseButton {
+  background-color: var(--color_60);
+  color: var(--font_color_60);
+  padding: var(--padding_var);
+  border-radius: var(--border_radius_max);
+  font-weight: 500;
+  font-size: 15px;
+  border: 1px solid var(--color_10);
+  cursor: pointer;
+}
+
+.expenseButton.expenseCancelButton {
+  border-color: var(--color_focus);
+}
+
+/* Expense Form */
+
+.expense_form {
+  width: 100%;
+}
+.expense_form_Input_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--space_60);
+}
+.expense_form_Input_container > div {
+  width: 50%;
+}
+.expense_input {
+  width: 100%;
+  background-color: var(--color_60);
+  color: var(--font_color_30);
+}
+.expense_input.input_alert {
+  width: 100%;
+  border-color: red;
+  background-color: salmon;
+  color: var(--color_60);
+}
+.expense_form_Button_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}

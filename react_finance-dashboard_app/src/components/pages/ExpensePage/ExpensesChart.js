@@ -1,4 +1,3 @@
-import { expenseChartStyle } from "../../../styles";
 import { Card } from "../../common";
 import { Chart } from "./ExpenseChart";
 
@@ -23,7 +22,7 @@ const ExpensesChart = (props) => {
   }
 
   return (
-    <Card style={expenseChartStyle.chart_constainer}>
+    <Card style={{}}>
       <Chart dataPoints={ChartDataPoint} />
     </Card>
   );

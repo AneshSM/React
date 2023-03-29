@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { expensesStyle } from "../../../styles";
-import { Card } from "../../common";
-import ExpenseFilter from "./ExpenseFilter";
-import ExpenseList from "./ExpenseList";
-import ExpensesChart from "./ExpensesChart";
+
+import styles from "../../../styles/pages/ExpensePage.module.css";
+
+// import ExpenseFilter from "./ExpenseFilter";
+// import ExpenseList from "./ExpenseList";
+// import ExpensesChart from "./ExpensesChart";
 import NewExpenses from "./NewExpenses";
 
 const Expenses = () => {
@@ -31,18 +32,18 @@ const Expenses = () => {
   });
 
   return (
-    <Card style={expensesStyle.expenses_container}>
-      <Card style={expensesStyle.expenseFilterChart_container}>
+    <div id={styles.expense_container}>
+      <div id={styles.expense_data_filter_chart_container}>
         <NewExpenses onAddNewExpense={getNewExpenseData} />
-        <ExpenseFilter
+        {/* <ExpenseFilter
           title={"Year"}
           value={year}
           onExpenseFilter={getFilteredYear}
         />
-        <ExpensesChart expenses={filteredExpenses} />
-      </Card>
-      <ExpenseList items={filteredExpenses} />
-    </Card>
+        <ExpensesChart expenses={filteredExpenses} /> */}
+      </div>
+      {/* <ExpenseList items={filteredExpenses} /> */}
+    </div>
   );
 };
 

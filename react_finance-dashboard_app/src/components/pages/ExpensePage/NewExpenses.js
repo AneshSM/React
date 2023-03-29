@@ -1,23 +1,24 @@
 import { useState } from "react";
-import { new_expensesStyles } from "../../../styles";
+import styles from "../../../styles/pages/ExpensePage.module.css";
 import { Card, CustomButton } from "../../common";
 import ExpenseForm from "./ExpenseForm";
 const NewExpenses = (props) => {
   const onAddExpense = (getExpenseData) => {
     props.onAddNewExpense(getExpenseData);
   };
-  const [ClickState, setClickState] = useState(false);
+  const [ClickState, setClickState] = useState(true);
   const checkValue = (value) => {
     value === "false" ? setClickState(false) : setClickState(true);
   };
   return (
-    <Card style={new_expensesStyles.new_expense_container}>
+    <Card id={styles.newExpense_container}>
       {!ClickState && (
         <CustomButton
           type="button"
           label="Add New Expense"
           value="true"
-          style={new_expensesStyles.add_new_button}
+          className={styles.expenseButton}
+          style={{}}
           onPressed={checkValue}
         />
       )}

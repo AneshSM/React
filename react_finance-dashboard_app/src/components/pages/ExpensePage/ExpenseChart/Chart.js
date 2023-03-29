@@ -1,11 +1,10 @@
-import { expenseChartStyle } from "../../../../styles";
 import { Card } from "../../../common";
 import ChartBar from "./ChartBar";
 const Chart = (props) => {
   const dataPointValues = props.dataPoints.map((dataPoint) => dataPoint.value);
   const maxMothValue = Math.max(...dataPointValues);
   return (
-    <Card style={expenseChartStyle.Chart}>
+    <Card style={{}}>
       {props.dataPoints.map((dataPoint) => (
         <ChartBar
           value={dataPoint.value}

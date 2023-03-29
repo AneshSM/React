@@ -1,4 +1,3 @@
-import { customButton, flexBox } from "../../styles";
 import Card from "./Card";
 
 const CustomButton = (props) => {
@@ -8,9 +7,9 @@ const CustomButton = (props) => {
   return (
     <Card mode="1" className="custom_button">
       <button
-        className="button"
+        className={props.className}
         type={props.type}
-        style={{ ...flexBox, ...customButton, ...props.style }}
+        style={{}}
         value={props.value}
         onClick={passValue}
       >
