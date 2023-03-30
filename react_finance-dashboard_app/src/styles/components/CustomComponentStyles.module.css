@@ -1,0 +1,54 @@
+/* Card wrapper Style */
+
+.card {
+  border: 0.5px solid var(--font_color_30);
+  border-radius: var(--border_radius_max);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  padding: 5px;
+  border-radius: 10px;
+}
+/* Date container style */
+.date_container {
+  background-color: var(--color_60);
+  flex-flow: column;
+  justify-content: space-evenly;
+  border-width: 2px;
+  border-color: var(--color_10);
+  color: var(--font_color_60);
+  height: 100%;
+  width: 9rem;
+}
+.date_container > div {
+  font-size: small;
+  width: 100%;
+  border: none;
+}
+.date_container > div:last-child {
+  font-size: xx-large;
+}
+/* Dropdown style */
+.dropdown_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding_var);
+}
+.dropdown_label {
+  font-size: x-large;
+  color: var(--font_color_60);
+}
+.dropdown {
+  background: transparent;
+  color: var(--font_color_60);
+  padding: 5px;
+  border-radius: var(--border_radius_min);
+  background-color: var(--color_30);
+}
+.dropdown_option {
+  color: var(--font_color_30);
+}

@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import styles from "../../../styles/pages/ExpensePage.module.css";
 
-// import ExpenseFilter from "./ExpenseFilter";
-// import ExpenseList from "./ExpenseList";
-// import ExpensesChart from "./ExpensesChart";
+import ExpenseFilter from "./ExpenseFilter";
+import ExpenseList from "./ExpenseList";
+import ExpensesChart from "./ExpensesChart";
 import NewExpenses from "./NewExpenses";
 
 const Expenses = () => {
@@ -35,14 +35,14 @@ const Expenses = () => {
     <div id={styles.expense_container}>
       <div id={styles.expense_data_filter_chart_container}>
         <NewExpenses onAddNewExpense={getNewExpenseData} />
-        {/* <ExpenseFilter
+        <ExpenseFilter
           title={"Year"}
           value={year}
           onExpenseFilter={getFilteredYear}
         />
-        <ExpensesChart expenses={filteredExpenses} /> */}
+        <ExpensesChart expenses={filteredExpenses} />
       </div>
-      {/* <ExpenseList items={filteredExpenses} /> */}
+      <ExpenseList items={filteredExpenses} />
     </div>
   );
 };

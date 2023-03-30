@@ -1,7 +1,8 @@
+import styles from "../../styles/components/CustomComponentStyles.module.css";
 const Card = (props) => {
   const ids = props.id;
   return (
-    <div style={{}} id={ids}>
+    <div className={`${styles.card} " " ${props.className}`} id={ids}>
       {props.children}
     </div>
   );

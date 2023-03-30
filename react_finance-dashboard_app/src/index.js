@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { InnnerBar, OuterBar } from "./styles/components/Componentstyles";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -28,3 +29,5 @@ export {
 } from "./components/common";
 export { expenseInput } from "./hooks";
 export { ICNcontainer } from "./components/container";
+export { ErrorModule } from "./module";
+export { InnnerBar, OuterBar };

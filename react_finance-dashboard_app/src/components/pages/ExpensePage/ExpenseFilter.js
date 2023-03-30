@@ -1,15 +1,15 @@
-import { Card, CustomDropDown } from "../../common";
-
+import { CustomDropDown } from "../../common";
+import styles from "../../../styles/pages/ExpensePage.module.css";
 const ExpenseFilter = (props) => {
   return (
-    <Card style={{}}>
+    <div className={styles.expense_filter_container}>
       <CustomDropDown
         onSelect={props.onExpenseFilter}
         title={props.title}
         value={props.value}
         style={{}}
       />
-    </Card>
+    </div>
   );
 };
 

@@ -1,21 +1,18 @@
-import Card from "./Card";
-
+import styles from "../../styles/components/CustomComponentStyles.module.css";
 const CustomButton = (props) => {
   const passValue = (event) => {
     props.onPressed(event.target.value);
   };
   return (
-    <Card mode="1" className="custom_button">
-      <button
-        className={props.className}
-        type={props.type}
-        style={{}}
-        value={props.value}
-        onClick={passValue}
-      >
-        {props.label}
-      </button>
-    </Card>
+    <button
+      className={props.className || styles.button}
+      type={props.type}
+      style={{}}
+      value={props.value}
+      onClick={passValue}
+    >
+      {props.label}
+    </button>
   );
 };
 export default CustomButton;

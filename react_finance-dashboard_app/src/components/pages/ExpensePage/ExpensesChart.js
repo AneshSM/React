@@ -1,6 +1,6 @@
 import { Card } from "../../common";
 import { Chart } from "./ExpenseChart";
-
+import styles from "../../../styles/pages/ExpensePage.module.css";
 const ExpensesChart = (props) => {
   const ChartDataPoint = [
     { label: "Jan", value: 0 },
@@ -22,7 +22,7 @@ const ExpensesChart = (props) => {
   }
 
   return (
-    <Card style={{}}>
+    <Card className={styles.expense_chart_cotainer}>
       <Chart dataPoints={ChartDataPoint} />
     </Card>
   );

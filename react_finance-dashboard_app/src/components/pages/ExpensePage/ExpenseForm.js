@@ -1,95 +1,115 @@
 import styles from "../../../styles/pages/ExpensePage.module.css";
-import { CustomButton } from "../../../components/common";
-import { useState } from "react";
+import moduleStyles from "../../../styles/module/moduleStyles.module.css";
+import { Card, CustomButton } from "../../../components/common";
 import { expenseInput } from "../../../hooks";
+import ErrorModule from "../../../module/ErrorModule";
+import { useState } from "react";
 
 const ExpenseForm = (props) => {
   //set Data
   const [title, bindTitle, resetTitle] = expenseInput("");
   const [amount, bindAmount, resetAmount] = expenseInput(0);
   const [date, bindDate, resetDate] = expenseInput("");
-  const [validateTitle, setTitle] = useState(false);
-  const [validateAmount, setAmount] = useState(false);
-  const [validateDate, setDate] = useState(false);
-
+  const [error, setError] = useState();
+  const checkValue = (formvalues) => {
+    !formvalues.title !== "" &&
+      setError({
+        title: "Invalid title",
+        message: "Please enter an valid Expense title",
+      });
+    !formvalues.amount > 0 &&
+      setError({
+        title: "Invalid title",
+        message: "Please enter an valid Expense title",
+      });
+    !formvalues.date.toString() !== "Invalid Date" &&
+      setError({
+        title: "Invalid title",
+        message: "Please enter an valid Expense title",
+      });
+    return (
+      formvalues.title !== "" &&
+      formvalues.amount > 0 &&
+      formvalues.date.toString() !== "Invalid Date"
+    );
+  };
   // get Data
   const submitHandler = (event) => {
     event.preventDefault();
-    if (
-      (title !== "" && setTitle(true)) ||
-      (amount !== 0 && setAmount(true)) ||
-      (date.toString() !== "" && setDate(true))
-    ) {
-      validateTitle &&
-        validateAmount &&
-        validateDate &&
-        console.log({ title, amount, date });
+    const formvalues = {
+      id: "",
+      title,
+      amount: +amount,
+      date: new Date(date),
+    };
+    if (checkValue(formvalues)) {
+      resetAmount();
+      resetTitle();
+      resetDate();
+      props.onAddNewExpenseData(formvalues);
+      props.onCancel("false");
+      setError({ className: moduleStyles.hideContainer });
     }
-    // props.onAddNewExpenseData({ title, amount, date }) &&
-    // props.onCancel("false");
   };
 
   return (
-    <form className={styles.expense_form} onSubmit={submitHandler}>
-      <div className={styles.expense_form_Input_container}>
-        <div className="expense_input_container">
-          <label htmlFor="" className="input_label">
-            Title
-          </label>
-          <input
-            type="text"
-            className={`${styles.expense_input} ${
-              !validateTitle && styles.input_alert
-            }`}
-            value={title}
-            {...bindTitle}
+    <>
+      {error && <ErrorModule {...error} />}
+      <form className={styles.expense_form} onSubmit={submitHandler}>
+        <Card className={styles.expense_form_Input_container}>
+          <div>
+            <label htmlFor="" className={styles.input_label}>
+              Title
+            </label>
+            <input
+              type="text"
+              className={styles.expense_input}
+              value={title}
+              {...bindTitle}
+            />
+          </div>
+          <div>
+            <label htmlFor="" className={styles.input_label}>
+              Amount
+            </label>
+            <input
+              type="number"
+              value={amount}
+              className={styles.expense_input}
+              {...bindAmount}
+            />
+          </div>
+          <div>
+            <label htmlFor="" className={styles.input_label}>
+              Date
+            </label>
+            <input
+              type="date"
+              className={styles.expense_input}
+              value={date}
+              {...bindDate}
+            />
+          </div>
+        </Card>
+        <Card className={styles.expense_form_Button_container}>
+          <CustomButton
+            style={{}}
+            label="Cancel "
+            type="button"
+            value="false"
+            className={`${styles.expenseButton} " " ${styles.expenseCancelButton}`}
+            onPressed={props.onCancel}
           />
-        </div>
-        <div className="expense_input_container">
-          <label htmlFor="" className="input_label">
-            Amount
-          </label>
-          <input
-            type="number"
-            value={amount}
-            className={`${styles.expense_input} ${
-              !validateAmount && styles.input_alert
-            }`}
-            {...bindAmount}
+          <CustomButton
+            style={{}}
+            label="Submit"
+            type="submit"
+            className={styles.expenseButton}
+            onPressed={props.onCancel}
           />
-        </div>
-        <div className="expense_input_container">
-          <label htmlFor="" className="input_label">
-            Date
-          </label>
-          <input
-            type="date"
-            className={`${styles.expense_input} ${
-              !validateDate && styles.input_alert
-            }`}
-            value={date}
-            {...bindDate}
-          />
-        </div>
-      </div>
-      <div className={styles.expense_form_Button_container}>
-        <CustomButton
-          style={{}}
-          label="Cancel "
-          type="button"
-          value="false"
-          className={`${styles.expenseButton} ${styles.expenseCancelButton}`}
-          onPressed={props.onCancel}
-        />
-        <CustomButton
-          style={{}}
-          label="Submit"
-          type="submit"
-          className={styles.expenseButton}
-          onPressed={props.onCancel}
-        />
-      </div>
-    </form>
+        </Card>
+      </form>
+    </>
   );
 };
 export default ExpenseForm;

@@ -1,12 +1,14 @@
 import { Card } from "../../common";
 import ExpenseItem from "./ExpenseItem";
-
+import styles from "../../../styles/pages/ExpensePage.module.css";
 const ExpenseList = (props) => {
   if (props.items.length === 0) {
-    return <Card style={{}}>No Expense found</Card>;
+    return (
+      <Card className={styles.expense_list_container}>No Expense found</Card>
+    );
   }
   return (
-    <Card style={{}}>
+    <div className={styles.expense_list_container}>
       {props.items.map((expenseItems) => (
         <ExpenseItem
           key={expenseItems.id}
@@ -15,7 +17,7 @@ const ExpenseList = (props) => {
           date={expenseItems.date}
         />
       ))}
-    </Card>
+    </div>
   );
 };
 export default ExpenseList;
