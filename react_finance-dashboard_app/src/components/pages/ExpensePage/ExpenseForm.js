@@ -11,22 +11,31 @@ const ExpenseForm = (props) => {
   const [amount, bindAmount, resetAmount] = expenseInput(0);
   const [date, bindDate, resetDate] = expenseInput("");
   const [error, setError] = useState();
+  const closeError = () => {
+    setError(null);
+  };
   const checkValue = (formvalues) => {
-    !formvalues.title !== "" &&
+    if (formvalues.title === "") {
       setError({
         title: "Invalid title",
-        message: "Please enter an valid Expense title",
+        message: "Please enter an valid Expense Title",
       });
-    !formvalues.amount > 0 &&
+      return;
+    }
+    if (formvalues.amount === 0) {
       setError({
         title: "Invalid title",
-        message: "Please enter an valid Expense title",
+        message: "Please enter an valid Expense Amount",
       });
-    !formvalues.date.toString() !== "Invalid Date" &&
+      return;
+    }
+    if (formvalues.date.toString() === "Invalid Date") {
       setError({
         title: "Invalid title",
-        message: "Please enter an valid Expense title",
+        message: "Please enter an valid Expense Date",
       });
+      return;
+    }
     return (
       formvalues.title !== "" &&
       formvalues.amount > 0 &&
@@ -54,7 +63,7 @@ const ExpenseForm = (props) => {
 
   return (
     <>
-      {error && <ErrorModule {...error} />}
+      {error && <ErrorModule {...error} onClose={closeError} />}
       <form className={styles.expense_form} onSubmit={submitHandler}>
         <Card className={styles.expense_form_Input_container}>
           <div>

@@ -8,10 +8,10 @@ import ExpensesChart from "./ExpensesChart";
 import NewExpenses from "./NewExpenses";
 
 const Expenses = () => {
-  const dummy_list = [];
+  // const dummy_list = [];
   //New data
   let [key, setkey] = useState(0);
-  const [ExpenseListValue, setExpenses] = useState(dummy_list);
+  const [ExpenseListValue, setExpenses] = useState([]);
   const getNewExpenseData = (newExpenseData) => {
     newExpenseData.id = key;
     setkey((prev) => prev + 1);
