@@ -29,12 +29,6 @@ const IconList = [
       </span>
     ),
   },
-  {
-    //Side bar icons
-  },
-  {
-    // Payment icons
-  },
 ];
 
 export default IconList;

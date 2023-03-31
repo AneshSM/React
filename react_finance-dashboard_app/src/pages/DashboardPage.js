@@ -1,9 +1,9 @@
-import { KPIcards } from "../components/common";
+import { KPIcontainer } from "../components/container";
 
 const DashboardPage = () => {
   return (
     <>
-      <KPIcards />
+      <KPIcontainer />
     </>
   );
 };

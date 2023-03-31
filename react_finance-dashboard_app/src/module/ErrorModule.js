@@ -1,8 +1,9 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { Card, CustomButton } from "../components/common";
 import styles from "../styles/module/moduleStyles.module.css";
 import componentStyles from "../styles/components/CustomComponentStyles.module.css";
-const ErrorModule = (props) => {
+const OverlayModule = (props) => {
   return (
     <Card
       onClick={props.onClose}
@@ -24,6 +25,20 @@ const ErrorModule = (props) => {
         </footer>
       </Card>
     </Card>
+  );
+};
+const ErrorModule = (props) => {
+  return (
+    <>
+      {ReactDOM.createPortal(
+        <OverlayModule
+          title={props.title}
+          message={props.message}
+          onClose={props.onClose}
+        />,
+        document.getElementById("overlay-root")
+      )}
+    </>
   );
 };
 

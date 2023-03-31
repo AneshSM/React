@@ -52,3 +52,74 @@
 .dropdown_option {
   color: var(--font_color_30);
 }
+
+/* KPI card styles */
+
+.kpi_card {
+  height: 95.75px;
+  min-height: 90px;
+  max-height: 95px;
+  min-width: 200px;
+  max-width: 380px;
+  background-color: var(--color_60);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+  color: var(--font_color_30);
+  flex: 1 1 auto;
+  border-radius: var(--border_radius_max);
+  padding: var(--space_10);
+  gap: 15%;
+}
+
+.kpi_card:hover {
+  box-shadow: var(--box-shadow_1);
+  cursor: pointer;
+}
+
+.kpi_icon {
+  height: fit-content;
+  width: fit-content;
+  padding: var(--space_60);
+  padding-bottom: var(--space_30);
+  background-color: var(--color_30);
+  color: var(--color_10);
+  border-radius: var(--border_radius_min);
+}
+
+.kpi_data {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-evenly;
+  flex: 1 0 0;
+  height: 100%;
+}
+
+.kpi_data_head {
+  font-size: clamp(10px, 15px, 1rem);
+}
+
+.kpi_data_content {
+  font-size: clamp(27px, 27px, 1rem);
+  color: var(--font_color_60);
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/* Container Styles */
+/* Row Container */
+.row_container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1 1 auto;
+  gap: var(--padding_var);
+  border: 1px solid white;
+}
+.kpi_cards_container {
+  padding: var(--padding_var);
+  gap: var(--cards_gap);
+}

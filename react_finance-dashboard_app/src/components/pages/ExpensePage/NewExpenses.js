@@ -6,7 +6,7 @@ const NewExpenses = (props) => {
   const onAddExpense = (getExpenseData) => {
     props.onAddNewExpense(getExpenseData);
   };
-  const [ClickState, setClickState] = useState(true);
+  const [ClickState, setClickState] = useState(false);
   const checkValue = (value) => {
     value === "false" ? setClickState(false) : setClickState(true);
   };

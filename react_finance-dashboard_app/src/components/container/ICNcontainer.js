@@ -1,5 +1,6 @@
 import { COLOR } from "../../constants";
 import { Card } from "../common";
+import { FaBeer } from "react-icons/fa";
 const icn = {
   icnContainer: {
     height: "100%",
@@ -17,8 +18,8 @@ const icn = {
 };
 const ICNcontainer = (props) => {
   return (
-    <div style={icn.icnContainer}>
-      <Card style={icn.icon}>{props.icn}</Card>
+    <div className={props.className} style={icn.icnContainer}>
+      <FaBeer />
     </div>
   );
 };

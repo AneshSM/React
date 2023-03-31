@@ -1,11 +1,11 @@
 import "./App.css";
 
-import { ExpensePage } from "./pages";
+import { DashboardPage, ExpensePage } from "./pages";
 
 function App() {
   return (
     <div id="main">
-      <ExpensePage />
+      <DashboardPage />
     </div>
   );
 }

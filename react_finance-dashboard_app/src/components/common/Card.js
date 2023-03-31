@@ -3,7 +3,7 @@ const Card = (props) => {
   const ids = props.id;
   return (
     <div
-      className={`${styles.card} " " ${props.className}`}
+      className={`${styles.card}  ${props.className}`}
       onClick={props.onClick}
       id={ids}
     >
