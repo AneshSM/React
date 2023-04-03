@@ -1,1 +1,1 @@
-export { default as expenseInput } from "./expenseInput";
+export { default as InputHook } from "./InputHook";

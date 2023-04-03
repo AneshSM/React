@@ -1,15 +1,16 @@
-import styles from "../../../styles/pages/ExpensePage.module.css";
-import moduleStyles from "../../../styles/module/moduleStyles.module.css";
-import { expenseInput } from "../../../hooks";
-import ErrorModule from "../../../module/ErrorModule";
 import { useState } from "react";
 import { Card, CustomButton } from "../../common";
+import { InputHook } from "../../../hooks";
+import ErrorModule from "../../../module/ErrorModule";
 
+import styles from "../../../styles/pages/ExpensePage.module.css";
+import moduleStyles from "../../../styles/module/moduleStyles.module.css";
+import componentStyles from "../../../styles/components/CustomComponentStyles.module.css";
 const ExpenseForm = (props) => {
   //set Data
-  const [title, bindTitle, resetTitle] = expenseInput("");
-  const [amount, bindAmount, resetAmount] = expenseInput(0);
-  const [date, bindDate, resetDate] = expenseInput("");
+  const [title, bindTitle, resetTitle] = InputHook("");
+  const [amount, bindAmount, resetAmount] = InputHook(0);
+  const [date, bindDate, resetDate] = InputHook("");
   const [error, setError] = useState();
   const closeError = () => {
     setError(null);
@@ -106,14 +107,14 @@ const ExpenseForm = (props) => {
             label="Cancel "
             type="button"
             value="false"
-            className={`${styles.expenseButton} " " ${styles.expenseCancelButton}`}
+            className={`${componentStyles["form-button"]} ${componentStyles["form-cancel-button"]}`}
             onPressed={props.onCancel}
           />
           <CustomButton
             style={{}}
             label="Submit"
             type="submit"
-            className={styles.expenseButton}
+            className={componentStyles["form-button"]}
             onPressed={props.onCancel}
           />
         </Card>

@@ -1,11 +1,11 @@
 import "./App.css";
 
-import { DashboardPage, ExpensePage } from "./pages";
+import { AuthPage, DashboardPage, ExpensePage, LoginPage } from "./pages";
 
 function App() {
   return (
     <div id="main">
-      <DashboardPage />
+      <AuthPage />
     </div>
   );
 }

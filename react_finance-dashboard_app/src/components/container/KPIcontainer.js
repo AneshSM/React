@@ -13,7 +13,7 @@ const kpi_list = [
   { title: "Balance", content: "$41,210" },
   { title: "Balance", content: "$41,210" },
 ];
-const KPIcontainer = () => {
+const KpiContainer = () => {
   return (
     <RowContainer className={styles.kpi_cards_container}>
       {kpi_list.map((icons) => {
@@ -23,4 +23,4 @@ const KPIcontainer = () => {
   );
 };
 
-export default KPIcontainer;
+export default KpiContainer;

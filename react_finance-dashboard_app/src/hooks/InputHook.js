@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { COLOR } from "../constants";
 
-const ExpenseInput = (initialValue) => {
+const InputHook = (initialValue) => {
   const [value, setValue] = useState(initialValue);
   const [inputStyle, setinputStyle] = useState({});
   const reset = () => {
@@ -22,4 +22,4 @@ const ExpenseInput = (initialValue) => {
   return [value, bind, reset];
 };
 
-export default ExpenseInput;
+export default InputHook;

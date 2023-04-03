@@ -10,9 +10,9 @@
 
   /* fix container */
   --position: 0;
-  --space_60: 10px;
-  --space_30: 5px;
-  --space_10: 20px;
+  --space_60: 20px;
+  --space_30: 10px;
+  --space_10: 5px;
 
   /* Even card space */
   --padding_var: 15px;
@@ -27,5 +27,5 @@
 
   /* shadow */
   --box-shadow_1: 0 0 5px 2px #00ff4879;
-  --box-shadow_2: 0 5px 5px 2px #00000079;
+  --box-shadow_60: 0 1px 5px 2px #00000079;
 }
