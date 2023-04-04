@@ -34,7 +34,7 @@
   color: var(--font_color_60);
 }
 .auth-input-invalid {
-  border-width: 2px;
+  border-width: 1px;
   border-color: tomato;
   background-color: var(--font_color_30);
   color: black;

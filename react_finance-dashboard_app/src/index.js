@@ -2,11 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import { AuthContextProvider } from "./auth";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthContextProvider>
+      <App />
+    </AuthContextProvider>
   </React.StrictMode>
 );
 
@@ -14,6 +17,7 @@ root.render(
 // Components
 export {
   Card,
+  CustomInput,
   CustomButton,
   CustomDropDown,
   DateComponent,
@@ -39,3 +43,6 @@ export {
   expensePageStyle,
   moduleStyles,
 } from "./styles";
+
+// Auth
+export { AuthContext, AuthContextProvider } from "./auth";

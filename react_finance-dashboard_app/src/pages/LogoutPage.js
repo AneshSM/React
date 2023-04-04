@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Card, CustomButton } from "../components/common";
 import { authPageStyle, componentStyle } from "../styles";
+import { AuthContext } from "../auth";
 
 const LogoutPage = (props) => {
+  // Context API
+  const context = useContext(AuthContext);
   const onsubmitHandler = (event) => {
     event.preventDefault();
-    props.onClick();
+    context.onLogout();
   };
   return (
     <Card
@@ -19,7 +22,9 @@ const LogoutPage = (props) => {
           style={{}}
           label="Logout"
           type="submit"
-          className={`${componentStyle["form-button"]} ${componentStyle["form-cancel-button"]} ${authPageStyle["auth-logout-button"]} `}
+          classes={{
+            button_Classes: `${componentStyle["form-button"]} ${componentStyle["form-cancel-button"]} ${authPageStyle["auth-logout-button"]} `,
+          }}
         />
       </form>
     </Card>

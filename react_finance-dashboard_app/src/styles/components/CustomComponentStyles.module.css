@@ -140,7 +140,7 @@
   border: none;
   gap: var(--space_60);
 }
-.form-input-container > div {
+.input-container {
   width: 100%;
   gap: var(--space_60);
   align-items: baseline;
