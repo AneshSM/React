@@ -1,0 +1,7 @@
+.custom-button {
+  border-radius: 50px;
+  border-color: transparent;
+  padding-left: 25px;
+  padding-right: 25px;
+  cursor: pointer;
+}

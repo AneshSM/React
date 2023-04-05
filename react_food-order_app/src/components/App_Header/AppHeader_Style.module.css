@@ -1,0 +1,35 @@
+.app-header {
+  width: 100%;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 9%;
+  padding-right: 9%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: var(--color_tertiary);
+}
+
+.header-title {
+  font-size: xx-large;
+  font-weight: 700;
+  color: var(--font_color_primary);
+}
+
+.header-options {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+}
+
+.header-cart-button {
+  font-size: large;
+  background-color: var(--color_tertiaryDark);
+  color: white;
+  padding: 14px;
+  width: 25%;
+}
