@@ -6,8 +6,9 @@
   height: 100%;
   width: 100%;
   position: relative;
-  z-index: 1;
-  overflow-y: scroll;
+  z-index: 0;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .App-logo {

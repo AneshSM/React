@@ -20,15 +20,11 @@ const AppHeader = (props) => {
             style={{}}
           >
             <div>
-              <div>
-                <FaShoppingCart />
-              </div>
+              <FaShoppingCart />
               <span>Your Cart</span>
-              <span>
-                <div className={headerStyle["header-item-counter"]}>
-                  {/* {props.value} */}2
-                </div>
-              </span>
+              <div className={headerStyle["header-item-counter"]}>
+                {/* {props.value} */}0
+              </div>
             </div>
           </CustomButton>
         </div>
