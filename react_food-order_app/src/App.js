@@ -1,9 +1,9 @@
 import "./App.css";
-import { AppHeader, CustomButton, CustomCard } from "./global/components";
-const classes = {
-  button_Classes: "",
-  card_Classes: "",
-};
+import { AppHeader, AppMain } from "./layouts";
+// const classes = {
+//   button_Classes: "",
+//   card_Classes: "",
+// };
 function App() {
   return (
     <div className="App">
@@ -15,6 +15,7 @@ function App() {
       </CustomButton> */}
       {/* <CustomCard classes={classes}>content</CustomCard> */}
       <AppHeader />
+      <AppMain />
     </div>
   );
 }

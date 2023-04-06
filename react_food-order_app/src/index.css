@@ -3,7 +3,7 @@
   --color_primary: #262526;
   --color_primaryLight: #323132;
 
-  --color_secondary: "#FFFDFF";
+  --color_secondary: #fffdff;
 
   --color_tertiary: #8a2b06;
   --color_tertiaryLight: #ac3718;
@@ -33,6 +33,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
   height: 100vh;
+}
+#root {
+  height: 100%;
 }
 
 code {

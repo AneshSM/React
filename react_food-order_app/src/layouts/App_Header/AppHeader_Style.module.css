@@ -27,9 +27,33 @@
 }
 
 .header-cart-button {
-  font-size: large;
   background-color: var(--color_tertiaryDark);
   color: white;
-  padding: 14px;
-  width: 25%;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex: 0 0 fit-content;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.header-cart-button > div {
+  font-size: large;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: larger;
+  color: var(--font_color_primary);
+  gap: 10px;
+  padding: 10px;
+}
+.header-item-counter {
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  background-color: var(--color_tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,0 +1,6 @@
+.list-container {
+  background-color: var(--color_secondary);
+  width: 70%;
+  height: 65%;
+  z-index: 10;
+}

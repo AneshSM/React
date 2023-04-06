@@ -15,4 +15,7 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-export { CustomButton, CustomCard, AppHeader } from "./global/components";
+export { CustomButton, CustomCard, CustomList } from "./components";
+export { AppHeader, AppMain } from "./layouts";
+export { mealsImage } from "./constants/assets";
+export { CartIcon } from "./constants/Icons";
