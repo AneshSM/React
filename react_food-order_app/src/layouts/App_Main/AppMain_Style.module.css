@@ -6,12 +6,8 @@
   justify-content: space-evenly;
   flex-flow: column nowrap;
   flex: 1 1 auto;
-  overflow-y: scroll;
-  position: relative;
-  background-color: var(--color_primary);
 }
-
-.main-img {
+.food-main-img {
   width: 110%;
   height: 60%;
   object-fit: cover;
@@ -20,42 +16,47 @@
   z-index: 0;
   transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
 }
-.main-description-card {
+
+.food-description-card {
   text-align: center;
   max-width: 45rem;
   width: 90%;
-  position: fixed;
   height: 20%;
   top: 15px;
-  margin-top: 19vh;
-  z-index: 2;
+  margin-top: 9vh;
+  z-index: 1;
   background-color: var(--color_primaryLight);
   color: var(--font_color_primary);
   padding: 1rem;
   box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
 }
 
-.main-description-card h2 {
+.food-description-card h2 {
   font-size: 1.5rem;
   margin-top: 0;
 }
-.main-description-card p {
+.food-description-card p {
   text-align: center;
   margin-top: 1.5vh;
 }
 
 @media screen and (max-width: 554px) {
-  .main-description-card {
+  .food-main-img {
+    width: 120%;
+    height: 50%;
+    object-fit: contain;
+  }
+  .food-description-card {
     max-width: 45rem;
     width: 95%;
     height: fit-content;
     margin-top: 12vh;
   }
-  .main-description-card h2 {
+  .food-description-card h2 {
     font-size: 1.2rem;
     font-weight: 700;
   }
-  .main-description-card p {
+  .food-description-card p {
     text-align: center;
     font-size: 14px;
     margin-top: 1vh;

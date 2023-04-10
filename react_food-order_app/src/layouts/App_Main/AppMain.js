@@ -1,24 +1,29 @@
 import React from "react";
-import mainStyle from "./AppMain_Style.module.css";
-import { CustomCard, CustomList } from "../../components";
+
 import { mealsImage } from "../../constants/assets";
+import { COLOR } from "../../constants/color";
+
+import { FoodList, FoodSummary } from "../../components/page";
+
+import mainStyle from "./AppMain_Style.module.css";
+
 const AppMain = (props) => {
-  const classes = { card_Classes: mainStyle["main-description-card"] };
   return (
     <>
-      <main className={mainStyle["main-content"]}>
-        <img className={mainStyle["main-img"]} src={mealsImage} alt="" />
-        <CustomCard classes={classes}>
-          <h2>Delicious Food, Delivered To You</h2>
-          <p>
-            Choose your favorite meal from our broad selection of available
-            meals and enjoy a delicious lunch or dinner at home.
-          </p>
-          <p>
-            All our meals are cooked with high-quality ingredients, just-in-time
-            and of course by experienced chefs!
-          </p>
-        </CustomCard>
+      <main
+        className={mainStyle["main-content"]}
+        style={{
+          backgroundColor: COLOR.color_PrimaryLight,
+          position: "relative",
+        }}
+      >
+        <img
+          className={mainStyle["food-main-img"]}
+          src={mealsImage}
+          alt="food img"
+        />
+        <FoodSummary varient={mainStyle["food-description-card"]} />
+        <FoodList />
       </main>
     </>
   );

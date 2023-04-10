@@ -8,8 +8,15 @@
   --color_tertiary: #8a2b06;
   --color_tertiaryLight: #ac3718;
   --color_tertiaryDark: #431402;
+
   /* font */
   --font_color_primary: #ffff;
+
+  /* box shadow */
+  --button-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+
+  /* blur */
+  --blur-color: rgba(0, 0, 0, 0.6);
 }
 * {
   margin: 0;
@@ -33,11 +40,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 #root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column;
   height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  overflow: scroll;
+  overflow-x: hidden;
 }
-
+#root-overlay {
+  position: relative;
+  z-index: 20;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

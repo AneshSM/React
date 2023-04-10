@@ -1,14 +1,4 @@
 .App {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-flow: column;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  z-index: 0;
-  overflow: scroll;
-  overflow-x: hidden;
 }
 
 .App-logo {

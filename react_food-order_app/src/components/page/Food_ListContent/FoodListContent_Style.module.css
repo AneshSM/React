@@ -1,0 +1,30 @@
+.food-list-content {
+  background-color: var(--color_secondary);
+  border-bottom: 0.1px solid rgba(131, 127, 127, 0.692);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.food-list-content > section {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: column;
+  height: 80%;
+}
+
+.food-content-details {
+}
+.food-details {
+}
+
+.food-content-buy {
+  gap: 10px;
+}
+
+@media screen and (max-width: 554px) {
+}

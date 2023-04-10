@@ -1,0 +1,15 @@
+.food-list-container {
+  width: 80%;
+  height: 60%;
+  z-index: 1;
+  background-color: var(--color_secondary);
+  padding: 1.5rem;
+  overflow-x: scroll;
+}
+
+@media screen and (max-width: 554px) {
+  .food-list-container {
+    height: 55%;
+    width: 95%;
+  }
+}

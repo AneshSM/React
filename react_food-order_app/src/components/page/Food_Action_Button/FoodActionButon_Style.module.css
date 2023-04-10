@@ -1,0 +1,32 @@
+.food-button {
+  background-color: var(--color_tertiary);
+  color: var(--font_color_primary);
+  padding: 8px;
+  font-weight: 700;
+  font-size: medium;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-shadow: none;
+}
+.food-button:hover {
+  box-shadow: var(--button-box-shadow);
+}
+
+.food-button-alt {
+  border-width: 0.5px;
+  border-color: var(--color_tertiary);
+  color: var(--color_tertiary);
+  background-color: var(--color_secondary);
+}
+
+@media screen and (max-width: 554px) {
+  .food-button {
+    padding: 6px;
+    font-size: small;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .food-button:hover {
+    box-shadow: var(--button-box-shadow);
+  }
+}

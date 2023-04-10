@@ -1,11 +1,12 @@
 import "./App.css";
-import { AppHeader, AppMain } from "./layouts";
+import CartProvider from "./context/CartProvider";
+import { MainPage } from "./pages";
+
 function App() {
   return (
-    <div className="App">
-      <AppHeader />
-      <AppMain />
-    </div>
+    <CartProvider>
+      <MainPage />
+    </CartProvider>
   );
 }
 

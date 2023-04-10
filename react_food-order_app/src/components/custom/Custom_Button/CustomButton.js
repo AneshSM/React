@@ -4,10 +4,10 @@ const CustomButton = (props) => {
   return (
     <>
       <button
-        className={`${custom_Button["custom-button"]} ${props.classes}`}
+        className={`${custom_Button["custom-button"]} ${props.varient}`}
         type={props.type}
-        disabled={props.isDisabled}
         style={props.style}
+        onClick={props.onCustomButtonClick}
       >
         {props.children}
       </button>
