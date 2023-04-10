@@ -5,7 +5,7 @@ const FoodActionButton = (props) => {
   return (
     <>
       <CustomButton
-        varient={`${foodActionButtonSryle["food-button"]} ${
+        varient={`${foodActionButtonSryle["food-button"]} ${props.varient}  ${
           props.type === "altButton"
             ? foodActionButtonSryle["food-button-alt"]
             : ""

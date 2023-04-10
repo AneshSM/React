@@ -19,7 +19,13 @@ const FoodListContent = (props) => {
   };
   return (
     <>
-      <CustomCard classes={foodLisContentStyle["food-list-content"]}>
+      <CustomCard
+        classes={foodLisContentStyle["food-list-content"]}
+        img={props.img}
+      >
+        <div className={foodLisContentStyle["img-container"]}>
+          <img src={props.img} alt="" />
+        </div>
         <FoodDetails food={props.food} />
         <FoodOrder onAddToCart={addToCartHandler} id={props.food.id} />
       </CustomCard>

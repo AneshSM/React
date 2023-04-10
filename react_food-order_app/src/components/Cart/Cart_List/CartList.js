@@ -12,25 +12,31 @@ const CartList = (props) => {
   const totalAmount = `${cartCTX.totalAmount.toFixed(2)}`;
   const hasItems = cartCTX.items.length > 0;
 
-  const cartItemAddHandler = (item) => {};
+  const cartItemAddHandler = (item) => {
+    cartCTX.addItem({ ...item, amount: 1 });
+  };
 
-  const cartItemRemoveHmadler = (id) => {};
+  const cartItemRemoveHmadler = (id) => {
+    cartCTX.removeItem(id);
+  };
+  const Items = cartCTX.items.map((item) => {
+    return (
+      <CartListContent
+        key={item.id}
+        name={item.name}
+        amount={item.amount}
+        price={item.price}
+        src={item.img}
+        onRemove={cartItemRemoveHmadler.bind(null, item.id)}
+        onAdd={cartItemAddHandler.bind(null, item)}
+      />
+    );
+  });
   return (
     <PopUpModule onClose={props.onHideCart}>
       <CustomCard classes={cartStyle["cart-list-container"]}>
         <main className={cartStyle["cart-list-content"]}>
-          {cartCTX.items.map((item) => {
-            return (
-              <CartListContent
-                key={item.id}
-                name={item.name}
-                amount={item.amount}
-                price={item.price}
-                onRemove={cartItemRemoveHmadler.bind(null, item.id)}
-                onAdd={cartItemAddHandler.bind(null, item)}
-              />
-            );
-          })}
+          {Items.length > 0 ? Items : <p>Cart is Empty</p>}
         </main>
         <footer className={cartStyle["footer"]}>
           <div className={cartStyle["cart-total-price"]}>
@@ -39,12 +45,17 @@ const CartList = (props) => {
           </div>
           <div className={cartStyle["cart-action-buttons"]}>
             <FoodActionButton
+              varient={cartStyle["cart-button"]}
               onAtcionBtnClick={props.onHideCart}
               type={"altButton"}
             >
               Close
             </FoodActionButton>
-            {hasItems && <FoodActionButton>Order</FoodActionButton>}
+            {hasItems && (
+              <FoodActionButton varient={cartStyle["cart-button"]}>
+                Order
+              </FoodActionButton>
+            )}
           </div>
         </footer>
       </CustomCard>

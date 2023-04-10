@@ -3,8 +3,13 @@
   height: 60%;
   z-index: 1;
   background-color: var(--color_secondary);
-  padding: 1.5rem;
+  padding: 1rem;
   overflow-x: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: column nowrap;
+  gap: 5px;
 }
 
 @media screen and (max-width: 554px) {

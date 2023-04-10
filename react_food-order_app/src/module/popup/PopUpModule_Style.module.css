@@ -9,18 +9,18 @@
 }
 .overlay-module {
   position: fixed;
-  top: 20vh;
-  left: 5%;
-  width: 90%;
-  border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  z-index: 30;
+  z-index: 20;
   animation: slide-down 300ms ease-out forwards;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 5rem;
 }
-
+@media screen and (max-width: 554px) {
+  .overlay-module {
+    left: 5px;
+    right: 5px;
+    bottom: 10px;
+  }
+}
 @media (min-width: 768px) {
   .modal {
     width: 40rem;
