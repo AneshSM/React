@@ -1,0 +1,12 @@
+.movie-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 10px;
+  min-height: 10vh;
+  min-width: 80vw;
+}

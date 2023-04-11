@@ -1,0 +1,32 @@
+.movie-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+  background-color: black;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 30vh;
+  min-width: 80%;
+}
+.movie-card-head,
+.movie-card-content,
+.movie-card-foot {
+  padding: 1rem;
+  color: white;
+  width: 100%;
+  flex: 1 1 auto;
+}
+.movie-card-head {
+  font-size: x-large;
+}
+.movie-card-content {
+  flex: 2 1 auto;
+  font-size: medium;
+}
+.movie-card-foot {
+  font-size: small;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
