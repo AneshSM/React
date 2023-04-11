@@ -8,54 +8,50 @@ function App() {
   const [error, setError] = useState(null);
   const [tasks, setTasks] = useState([]);
 
-  const fetchSupabase = async () => {
-    const supabase = await fetch("https://hjlbspttxhxvxmjwnafo.supabase.co");
+  const fetchTasks = async (taskText) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(
+        "https://react-http-6b4a6.firebaseio.com/tasks.json"
+      );
 
-    console.log(supabase);
+      if (!response.ok) {
+        throw new Error("Request failed!");
+      }
+
+      const data = await response.json();
+
+      const loadedTasks = [];
+
+      for (const taskKey in data) {
+        loadedTasks.push({ id: taskKey, text: data[taskKey].text });
+      }
+
+      setTasks(loadedTasks);
+    } catch (err) {
+      setError(err.message || "Something went wrong!");
+    }
+    setIsLoading(false);
   };
-  fetchSupabase();
-  // const fetchTasks = async (taskText) => {
-  //   setIsLoading(true);
-  //   setError(null);
-  //   try {
-  //     const response = await fetch("");
 
-  //     if (!response.ok) {
-  //       throw new Error("Request failed!");
-  //     }
+  useEffect(() => {
+    fetchTasks();
+  }, []);
 
-  //     const data = await response.json();
-
-  //     const loadedTasks = [];
-
-  //     for (const taskKey in data) {
-  //       loadedTasks.push({ id: taskKey, text: data[taskKey].text });
-  //     }
-
-  //     setTasks(loadedTasks);
-  //   } catch (err) {
-  //     setError(err.message || "Something went wrong!");
-  //   }
-  //   setIsLoading(false);
-  // };
-
-  // useEffect(() => {
-  //   fetchTasks();
-  // }, []);
-
-  // const taskAddHandler = (task) => {
-  //   setTasks((prevTasks) => prevTasks.concat(task));
-  // };
+  const taskAddHandler = (task) => {
+    setTasks((prevTasks) => prevTasks.concat(task));
+  };
 
   return (
     <React.Fragment>
-      {/* <NewTask onAddTask={taskAddHandler} />
+      <NewTask onAddTask={taskAddHandler} />
       <Tasks
         items={tasks}
         loading={isLoading}
         error={error}
         onFetch={fetchTasks}
-      /> */}
+      />
     </React.Fragment>
   );
 }
