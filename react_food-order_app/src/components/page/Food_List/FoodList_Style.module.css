@@ -10,8 +10,20 @@
   justify-content: space-evenly;
   flex-flow: column nowrap;
   gap: 5px;
+  animation: slide-down 300ms ease-out forwards;
 }
 
+.data-loading,
+.data-error {
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: xx-large;
+  text-align: center;
+  font-weight: 700;
+}
+.data-error {
+  color: brown;
+}
 @media screen and (max-width: 554px) {
   .food-list-container {
     height: 55%;

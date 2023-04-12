@@ -25,7 +25,12 @@ export { MainPage } from "./pages";
 export { CustomButton, CustomCard, CustomInput } from "./components/custom";
 
 // Cart
-export { CartButton, CartList, CartInput } from "./components/Cart";
+export {
+  CartButton,
+  CartList,
+  CartInput,
+  CartCheckout,
+} from "./components/Cart";
 
 // Page Components
 export {

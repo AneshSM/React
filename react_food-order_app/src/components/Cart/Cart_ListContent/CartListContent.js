@@ -3,8 +3,9 @@ import { CustomCard } from "../../custom";
 import cartStyle from "../Cart_Style.module.css";
 import cartListContentStyle from "./CartListContent_Style.module.css";
 const CartListContent = (props) => {
-  const price = `${props.price.toFixed(2)}`;
+  console.log(props.price);
 
+  const price = `${props.price.toFixed(2)}`;
   return (
     <CustomCard classes={cartListContentStyle["cart-content"]}>
       <div>
