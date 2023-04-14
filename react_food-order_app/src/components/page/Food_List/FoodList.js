@@ -20,7 +20,6 @@ const FoodList = () => {
       }
       const data = await response.json();
       const loadedData = [];
-
       for (const key in data) {
         loadedData.push({
           id: key,
@@ -29,7 +28,6 @@ const FoodList = () => {
           price: data[key].price,
         });
       }
-      console.log(loadedData);
       setMeals(loadedData);
       setIsLoading(false);
     };

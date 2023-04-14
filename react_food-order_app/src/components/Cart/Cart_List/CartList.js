@@ -12,6 +12,8 @@ const CartList = (props) => {
   const cartCTX = useContext(CartContext);
 
   const [isChecked, setIsChecked] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [didSubmit, setDidSubmit] = useState(false);
 
   const totalAmount = `${cartCTX.totalAmount.toFixed(2)}`;
   const hasItems = cartCTX.items.length > 0;
@@ -41,36 +43,89 @@ const CartList = (props) => {
     setIsChecked(true);
   };
 
+  const submitOrderHandler = async (userData) => {
+    setIsSubmitting(true);
+    await fetch(
+      "https://react-food-order-app-4a405-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          user: userData,
+          orderedItems: cartCTX.items,
+        }),
+      }
+    );
+    setIsSubmitting(false);
+    setDidSubmit(true);
+    cartCTX.clearCart();
+  };
+
+  const modalAction = (
+    <div className={cartStyle["cart-action-buttons"]}>
+      <FoodActionButton
+        varient={cartStyle["cart-button"]}
+        onAtcionBtnClick={props.onHideCart}
+        type={"altButton"}
+      >
+        Close
+      </FoodActionButton>
+      {hasItems && (
+        <FoodActionButton
+          varient={cartStyle["cart-button"]}
+          onAtcionBtnClick={orderHandler}
+        >
+          Order
+        </FoodActionButton>
+      )}
+    </div>
+  );
+  const CartContent = (
+    <>
+      <main className={cartStyle["cart-list-content"]}>
+        {Items.length > 0 ? Items : <p>Cart is Empty</p>}
+      </main>
+      <footer className={cartStyle["footer"]}>
+        <div className={cartStyle["cart-total-price"]}>
+          <span>Total Amount</span>
+          <span>{totalAmount}</span>
+        </div>
+        {isChecked ? (
+          <CartCheckout
+            onCancel={() => {
+              setIsChecked(false);
+            }}
+            onConfirm={submitOrderHandler}
+          />
+        ) : (
+          modalAction
+        )}
+      </footer>
+    </>
+  );
+
+  const sendinProgress = <p>Sending Order data...</p>;
+
+  const orderStatus = (
+    <>
+      <p>Successfully sent order!</p>
+      <div className={cartStyle["cart-action-buttons"]}>
+        <FoodActionButton
+          varient={cartStyle["cart-button"]}
+          onAtcionBtnClick={props.onHideCart}
+          type={"altButton"}
+        >
+          Close
+        </FoodActionButton>
+      </div>
+    </>
+  );
+
   return (
     <PopUpModule onClose={props.onHideCart}>
       <CustomCard classes={cartStyle["cart-list-container"]}>
-        <main className={cartStyle["cart-list-content"]}>
-          {Items.length > 0 ? Items : <p>Cart is Empty</p>}
-        </main>
-        <footer className={cartStyle["footer"]}>
-          <div className={cartStyle["cart-total-price"]}>
-            <span>Total Amount</span>
-            <span>{totalAmount}</span>
-          </div>
-          {isChecked && <CartCheckout />}
-          <div className={cartStyle["cart-action-buttons"]}>
-            <FoodActionButton
-              varient={cartStyle["cart-button"]}
-              onAtcionBtnClick={props.onHideCart}
-              type={"altButton"}
-            >
-              Close
-            </FoodActionButton>
-            {hasItems && (
-              <FoodActionButton
-                varient={cartStyle["cart-button"]}
-                onAtcionBtnClick={orderHandler}
-              >
-                Order
-              </FoodActionButton>
-            )}
-          </div>
-        </footer>
+        {!isSubmitting && didSubmit && orderStatus}
+        {!isSubmitting && !didSubmit && CartContent}
+        {isSubmitting && sendinProgress}
       </CustomCard>
     </PopUpModule>
   );
