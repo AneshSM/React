@@ -1,28 +1,32 @@
 import { useSelector, useDispatch, connect } from "react-redux";
-// styles
-import classes from "./Counter.module.css";
 import { Component } from "react";
+
+// Redux toolkit
+import { counterActions } from "../store";
+
+// styless
+import classes from "./Counter.module.css";
 
 // Functional Component
 const Counter = () => {
-  const counter = useSelector((state) => state.counter);
-  const toogleShow = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter);
+  const toogleShow = useSelector((state) => state.counter.showCounter);
   const dispatch = useDispatch();
 
   const actionHandler = (event) => {
     if (event.target.id === "increment") {
-      dispatch({ type: "INCREMENT" });
+      dispatch(counterActions.increment());
     }
     if (event.target.id === "decrement") {
-      dispatch({ type: "DECREMENT" });
+      dispatch(counterActions.decrement());
     }
     if (event.target.id === "increase") {
-      dispatch({ type: "INCREASE-BY-AMOUNT", amount: 5 });
+      dispatch(counterActions.increase(5));
     }
   };
 
   const toggleCounterHandler = () => {
-    dispatch({ type: "TOGGLE" });
+    dispatch(counterActions.toggle());
   };
 
   return (
