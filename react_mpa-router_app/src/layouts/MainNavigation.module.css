@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+
+.navList a {
+  color: var(--color-primary-400);
+  text-decoration: none;
+  font-size: larger;
+}
+
+.navList a:hover,
+.navList a.active {
+  text-decoration: underline;
+  color: var(--color-primary-800);
+}
